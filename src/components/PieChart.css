@@ -1,0 +1,53 @@
+/* General styles */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Pie Chart Page */
+.pie-chart-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #eee5e5; /* Dark background color */
+  color: #100f0f; /* Light text color */
+}
+
+/* Chart Container */
+.chart-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #dddddd; /* Slightly lighter dark background */
+}
+
+.chart-container h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #0b0b0b; /* Light text color */
+  text-align: center;
+}
+
+/* Chart Wrapper to control size */
+.chart-wrapper {
+  width: 100%; /* Full width to ensure centering */
+  max-width: 600px; /* Maximum width of the chart */
+  height: 400px; /* Adjust the height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Loading text */
+.chart-container p {
+  font-size: 1.2rem;
+  color: #090909; /* Light gray text color */
+  text-align: center;
+}
+
+/* Navbar and Footer styles (if needed) */

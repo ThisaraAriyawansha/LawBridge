@@ -3,6 +3,7 @@ import { Pie } from 'react-chartjs-2';
 import 'chart.js/auto';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import './PieChart.css'; // Import the CSS file for styling
 
 const PieChart = () => {
   const [chartData, setChartData] = useState({});
@@ -21,16 +22,22 @@ const PieChart = () => {
               label: 'Case Types',
               data: values,
               backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
+                'rgba(40, 44, 52, 0.8)', // Dark color 1
+                'rgba(72, 82, 91, 0.8)', // Dark color 2
+                'rgba(100, 110, 120, 0.8)', // Dark color 3
+                'rgba(30, 30, 30, 0.8)', // Additional dark color
+                'rgba(50, 50, 50, 0.8)', // Additional dark color
+                'rgba(70, 70, 70, 0.8)', // Additional dark color
               ],
               borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
+                'rgba(40, 44, 52, 1)', // Dark color 1
+                'rgba(72, 82, 91, 1)', // Dark color 2
+                'rgba(100, 110, 120, 1)', // Dark color 3
+                'rgba(30, 30, 30, 1)', // Additional dark color
+                'rgba(50, 50, 50, 1)', // Additional dark color
+                'rgba(70, 70, 70, 1)', // Additional dark color
               ],
-              borderWidth: 1,
+              borderWidth: 2,
             },
           ],
         });
@@ -39,13 +46,13 @@ const PieChart = () => {
   }, []);
 
   return (
-    
-    <div>
-       <Navbar />
-      <h2>Pie Chart</h2>
-      {chartData.labels ? <Pie data={chartData} /> : <p>Loading...</p>}
+    <div className="pie-chart-page">
+      <Navbar />
+      <div className="chart-container">
+        <h2>Summery Of the Cases..</h2>
+        {chartData.labels ? <div className="chart-wrapper"><Pie data={chartData} /></div> : <p>Loading...</p>}
+      </div>
       <Footer />
-
     </div>
   );
 };

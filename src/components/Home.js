@@ -19,7 +19,12 @@ const Home = () => {
             <div className="what-we-do-section">
                 <div className="container">
                     <h2>What We Do</h2>
-                    <p>We provide comprehensive solutions for legal case management, client communication, and more.</p>
+                    <p>At LawBridge, we provide a comprehensive suite of tools designed to streamline legal case management.
+                         Our platform facilitates efficient organization of case files, seamless client communication,
+                          and accurate tracking of court dates and document submissions. With LawBridge, legal professionals 
+                          can enhance their productivity, maintain meticulous records, and deliver exceptional service to their clients.
+                           Our goal is to support legal practices in reducing caseloads and improving outcomes through advanced data
+                            analysis and actionable insights.</p>
                 </div>
             </div>
             <Footer />
