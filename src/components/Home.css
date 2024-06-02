@@ -1,25 +1,65 @@
-/* Home.css */
+/* General styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 /* Styling for hero section background image */
 .hero-section {
     background-image: url('./images/2.jpg');
-    background-size: cover; /* Cover the entire element */
+    background-size: cover;
     background-position: center;
-    height: 700px; /* Adjust height as needed */
-    /* Add other styles for the hero section */
-}
-
-/* Styling for content inside hero section */
-.content {
-    text-align: center;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #fff;
-    padding: 100px 0; /* Adjust padding as needed */
+    text-align: center;
+    position: relative;
 }
 
-/* Increase font size and add animation */
+.background-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+
 h1 {
-    font-size: 48px; /* Adjust font size as needed */
-    animation: fadeInUp 1s ease; /* Add animation */
+    font-size: 48px;
+    margin: 0 0 20px;
+    animation: fadeInUp 1s ease;
+}
+
+p {
+    font-size: 18px;
+    margin: 0 0 20px;
+}
+
+.cta-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
 }
 
 @keyframes fadeInUp {
@@ -35,8 +75,19 @@ h1 {
 
 /* Styling for What We Do section */
 .what-we-do-section {
-    /* Normal background color or style */
-    background-color: #f0f0f0; /* Example background color */
-    color: #333; /* Example text color */
-    padding: 50px 0; /* Adjust padding as needed */
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.what-we-do-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.what-we-do-section p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
 }

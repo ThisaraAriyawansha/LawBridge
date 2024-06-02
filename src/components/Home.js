@@ -8,12 +8,11 @@ const Home = () => {
         <div className="home-page">
             <Navbar />
             <div className="hero-section">
-                {/* Background image */}
                 <div className="background-image">
                     <div className="content">
                         <h1 className="welcome-text">Welcome to LawBridge</h1>
                         <p>Your trusted partner in legal management.</p>
-                        {/* Add more content as needed */}
+                        <button className="cta-button">Learn More</button>
                     </div>
                 </div>
             </div>
@@ -21,7 +20,6 @@ const Home = () => {
                 <div className="container">
                     <h2>What We Do</h2>
                     <p>We provide comprehensive solutions for legal case management, client communication, and more.</p>
-                    {/* Add more sections or content */}
                 </div>
             </div>
             <Footer />
