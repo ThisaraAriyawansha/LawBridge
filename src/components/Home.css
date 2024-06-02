@@ -1,0 +1,42 @@
+/* Home.css */
+
+/* Styling for hero section background image */
+.hero-section {
+    background-image: url('./images/2.jpg');
+    background-size: cover; /* Cover the entire element */
+    background-position: center;
+    height: 700px; /* Adjust height as needed */
+    /* Add other styles for the hero section */
+}
+
+/* Styling for content inside hero section */
+.content {
+    text-align: center;
+    color: #fff;
+    padding: 100px 0; /* Adjust padding as needed */
+}
+
+/* Increase font size and add animation */
+h1 {
+    font-size: 48px; /* Adjust font size as needed */
+    animation: fadeInUp 1s ease; /* Add animation */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Styling for What We Do section */
+.what-we-do-section {
+    /* Normal background color or style */
+    background-color: #f0f0f0; /* Example background color */
+    color: #333; /* Example text color */
+    padding: 50px 0; /* Adjust padding as needed */
+}
