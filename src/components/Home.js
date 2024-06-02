@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import './Home.css';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
@@ -12,7 +13,7 @@ const Home = () => {
                     <div className="content">
                         <h1 className="welcome-text">Welcome to LawBridge</h1>
                         <p>Your trusted partner in legal management.</p>
-                        <button className="cta-button">Learn More</button>
+                        <Link to="/about" className="cta-button">Learn More</Link>
                     </div>
                 </div>
             </div>
