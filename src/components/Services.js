@@ -12,7 +12,7 @@ const Services = () => {
     return (
         <div className="services-page">
             <Navbar />
-            <div className="container">
+            <div className="container"><br></br><br></br><br></br>
                 <h1 className="main-heading">Our Services</h1>
                 <div className="services-grid">
                     <div className="service-item">
