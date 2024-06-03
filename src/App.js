@@ -8,6 +8,8 @@ import AboutUs from './components/AboutUs';
 import Services from './components/Services';
 import Login from './components/Login';
 import Register from './components/Register';
+import AddCase from './components/AddCase';
+
 
 const App = () => {
     const handleLogin = (userData) => {
@@ -27,6 +29,7 @@ const App = () => {
                 <Route path="/pie-chart" element={<PieChart />} />
                 <Route path="/about" element={<AboutUs />} />
                 <Route path="/services" element={<Services />} />
+                <Route path="/addcase" element={<AddCase />} />
                 <Route path="/login" element={<Login handleLogin={handleLogin} />} />
                 <Route path="/register" element={<Register handleRegister={handleRegister} />} />
             </Routes>

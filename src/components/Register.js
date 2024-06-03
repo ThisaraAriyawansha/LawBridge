@@ -29,6 +29,7 @@ const Register = () => {
     return (
         <div>
             <Navbar /><br /><br /><br /><br /><br />
+            
             <div className="register-form">
                 <h2>Register</h2>
                 <form onSubmit={handleSubmit}>

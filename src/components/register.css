@@ -1,13 +1,18 @@
 .register-form {
-    width: 100%;
-    max-width: 400px;
+    width: 90%;
+    max-width: 600px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     background: linear-gradient(to right, #03062e, #015560);
     color: #ffffff;
+    animation: fadeIn 1s ease-in-out;
+    z-index: 2;
+
+   
 }
+
 
 .register-form h2 {
     text-align: center;
@@ -18,6 +23,7 @@
 .register-form form {
     display: flex;
     flex-direction: column;
+    
 }
 
 .register-form input[type="text"],

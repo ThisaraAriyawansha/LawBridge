@@ -17,7 +17,7 @@ const Navbar = () => {
                     <li className="navbar-center-item">
                         <i className="fas fa-balance-scale navbar-icon"></i>
                     </li>
-                    <li><Link to="/add-case">Add Case</Link></li>
+                    <li><Link to="/addcase">Add Case</Link></li>
                     <li><Link to="/pie-chart">Summary</Link></li>
                     
                                         {isLoggedIn ? (
