@@ -1,22 +1,25 @@
-nav {
+/* src/components/Navbar.css */
+
+.navbar {
   background-color: #090909;
   padding: 1rem;
   border-radius: 10px; /* Adding border-radius for curved corners */
 }
 
-ul {
+.navbar-menu {
   list-style: none;
   display: flex;
   justify-content: space-around;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
-li {
+.navbar-menu li {
   margin: 0;
 }
 
-a {
+.navbar-menu a {
   color: #fbf9f9;
   text-decoration: none;
   font-size: 1.2rem;
@@ -25,7 +28,7 @@ a {
   font-family: 'Times New Roman', Times, serif;
 }
 
-a:hover {
+.navbar-menu a:hover {
   background-color: #007bff;
   border-radius: 4px;
 }
@@ -38,4 +41,28 @@ a:hover {
 .navbar-icon {
   color: #fbf9f9;
   font-size: 1.5rem;
+}
+
+.navbar-button {
+  color: #fbf9f9;
+  background-color: #000000; /* Black background */
+  border: none;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: 'Times New Roman', Times, serif;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.navbar-button:hover {
+  background-color: #007bff; /* Blue on hover */
+  color: #ffffff; /* White text on hover */
+  
+}
+
+.status {
+  color: #fbf9f9;
+  font-size: 1.2rem;
+  margin-left: 1rem; /* Adjust margin as needed */
+  font-size: 15px;
 }
