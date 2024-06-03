@@ -19,7 +19,7 @@ const ClientCommunication = () => {
                 <p>Schedule appointments and set reminders for your clients.</p>
                 <Link to="/appointment-scheduling">
                     {/* Apply the cta-button class to the button */}
-                    <button className="cta-button">Schedule Appointment</button>
+                    <button className="button">Schedule Appointment</button>
                 </Link>
             </div>
             <div className="feature">
@@ -27,7 +27,7 @@ const ClientCommunication = () => {
                 <p>Clients can log in to view updates and track their case status.</p>
                 <Link to="/client-portal">
                     {/* Apply the cta-button class to the button */}
-                    <button className="cta-button">Visit Client Portal</button>
+                    <button className="button">Visit Client Portal</button>
                 </Link>
             </div>
         </div>

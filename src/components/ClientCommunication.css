@@ -1,30 +1,41 @@
 /* ClientCommunication.css */
+.service-section {
+    margin-bottom: 40px;
+}
 
-/* Styling for the buttons */
+.feature {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature h3 {
+    color: #333;
+}
+
+.feature p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Custom button styles */
 .button {
-    background-color: transparent; /* Transparent background */
-    color: inherit; /* Inherit text color */
-    border: none; /* Remove border */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
     padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
     cursor: pointer;
-    border-radius: 10px;
-    transition-property: background-color, transform;
-    transition-duration: 0.3s;
-    transition-timing-function: ease-in-out;
-    overflow: hidden;
+    transition: background-color 0.3s ease;
 }
 
 .button:hover {
-    background-color: #12103a; /* Darker green background on hover */
-    transform: scale(1.05); /* Scale up slightly on hover */
-}
-
-/* Optional: Styles for other buttons if needed */
-.cta-button {
-    /* Add styles for cta-button if needed */
+    background-color: #0056b3;
 }

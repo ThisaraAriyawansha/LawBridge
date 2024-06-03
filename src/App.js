@@ -6,6 +6,9 @@ import Home from './components/Home';
 import PieChart from './components/PieChart';
 import AboutUs from './components/AboutUs';
 import Services from './components/Services';
+import { Login, Register } from './components/AuthForms';
+
+
 
 
 const App = () => {
@@ -16,6 +19,10 @@ const App = () => {
         <Route path="/pie-chart" element={<PieChart />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
+
       </Routes>
     </Router>
   );

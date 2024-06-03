@@ -7,7 +7,9 @@ import { Link } from 'react-router-dom';
 const Home = () => {
     return (
         <div className="home-page">
+            
             <Navbar />
+            
             <div className="hero-section">
                 <div className="background-image">
                     <div className="content">
