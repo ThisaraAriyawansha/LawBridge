@@ -5,15 +5,17 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Im
 import Home from './components/Home';
 import PieChart from './components/PieChart';
 import AboutUs from './components/AboutUs';
+import Services from './components/Services';
 
 
 const App = () => {
   return (
     <Router>
-      <Routes> {/* Wrap Routes around Route components */}
+      <Routes> 
       <Route exact path="/" element={<Home />} />
         <Route path="/pie-chart" element={<PieChart />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/services" element={<Services />} />
       </Routes>
     </Router>
   );
