@@ -38,10 +38,25 @@
   align-items: center;
 }
 
-.navbar-icon {
-  color: #fbf9f9;
-  font-size: 1.5rem;
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg); /* Rotate halfway (1 circle) */
+  }
+  100% {
+    transform: rotate(360deg); /* Rotate full circle */
+  }
 }
+
+.navbar-icon {
+  color: #95810e;
+  font-size: 1.5rem;
+  animation: rotate 4s linear infinite; 
+}
+
+
 
 .navbar-button {
   color: #fbf9f9;
@@ -61,7 +76,7 @@
 }
 
 .status {
-  color: #fbf9f9;
+  color: #fbfbf9;
   font-size: 1.2rem;
   margin-left: 1rem; /* Adjust margin as needed */
   font-size: 15px;
