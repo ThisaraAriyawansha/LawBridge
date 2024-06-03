@@ -6,12 +6,21 @@ import Home from './components/Home';
 import PieChart from './components/PieChart';
 import AboutUs from './components/AboutUs';
 import Services from './components/Services';
-import { Login, Register } from './components/AuthForms';
-
+import Login from './components/Login';
+import Register from './components/Register';
 
 
 
 const App = () => {
+  const handleLogin = (userData) => {
+    console.log('Logging in with:', userData);
+    // Add your login logic here
+};
+
+const handleRegister = (userData) => {
+    console.log('Registering with:', userData);
+    // Add your register logic here
+};
   return (
     <Router>
       <Routes> 

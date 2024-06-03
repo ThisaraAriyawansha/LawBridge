@@ -9,7 +9,7 @@ const Navbar = () => {
                 <ul className="navbar-menu">
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/services">Services</Link></li>
-                    <li><Link to="/register">Login</Link></li>
+                    <li><Link to="/login">Login</Link></li>
                     <li className="navbar-center-item">
                         <i className="fas fa-balance-scale navbar-icon"></i>
                     </li>
