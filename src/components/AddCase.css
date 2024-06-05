@@ -153,3 +153,21 @@ textarea {
     margin: 0;
     font-size: 1rem;
 }
+.success-message {
+    color: #28a745;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    animation: fadeInOut 3s forwards;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}

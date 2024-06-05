@@ -8,11 +8,35 @@ const AddCase = () => {
     const [description, setDescription] = useState('');
     const [province, setProvince] = useState('');
     const [date, setDate] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Add your form submission logic here
-        console.log({ caseType, description, province, date });
+
+        const caseData = { caseType, description, province, date };
+
+        fetch('http://localhost:5000/addcase', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(caseData)
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log(data);
+            setSuccessMessage('Case added successfully!');
+            setTimeout(() => {
+                setSuccessMessage('');
+            }, 3000); // Message will disappear after 3 seconds
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            setSuccessMessage('Failed to add case.');
+            setTimeout(() => {
+                setSuccessMessage('');
+            }, 3000);
+        });
     };
 
     return (
@@ -62,7 +86,6 @@ const AddCase = () => {
                                 <option value="northern_Province">Southern Province</option>
                                 <option value="Uva_Province">Uva Province</option>
                                 <option value="western_Province">Western Province</option>
-
                             </select>
                         </div>
                         <div className="form-group">
@@ -76,6 +99,11 @@ const AddCase = () => {
                         </div>
                         <button type="submit" className="btn-primary">Submit</button>
                     </form>
+                    {successMessage && (
+                        <div className="success-message">
+                            {successMessage}
+                        </div>
+                    )}
                     <div className="data-protection">
                         <h3>We Protect Your Data</h3>
                         <p>Don't worry, we take your data privacy seriously and ensure it's protected.</p>

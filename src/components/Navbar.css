@@ -40,21 +40,24 @@
 
 @keyframes rotate {
   0% {
-    transform: rotate(0deg);
+    transform: rotateY(0deg);
   }
   50% {
-    transform: rotate(180deg); /* Rotate halfway (1 circle) */
+    transform: rotateY(180deg);
   }
   100% {
-    transform: rotate(360deg); /* Rotate full circle */
+    transform: rotateY(360deg);
   }
 }
 
 .navbar-icon {
   color: #95810e;
-  font-size: 1.5rem;
-  animation: rotate 4s linear infinite; 
+  font-size: 30px;
+  animation: rotate 4s linear infinite;
+  transform-origin: center; /* Ensures the rotation happens around the center */
 }
+
+
 
 
 

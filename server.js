@@ -59,6 +59,45 @@ app.post('/api/login', (req, res) => {
 });
 
 
+app.post('/addcase', (req, res) => {
+  const { caseType, description, province, date } = req.body;
+
+  // Insert the new case into the cases table
+  const insertCaseQuery = 'INSERT INTO cases (caseType, description, province, date) VALUES (?, ?, ?, ?)';
+  db.query(insertCaseQuery, [caseType, description, province, date], (err, result) => {
+      if (err) {
+          console.error('Error inserting case:', err);
+          res.status(500).send('Error inserting case');
+          return;
+      }
+
+      // Update the case_types table to increment the case count
+      const updateCaseTypeQuery = 'UPDATE case_types SET value = value + 1 WHERE label = ?';
+      db.query(updateCaseTypeQuery, [caseType], (err, result) => {
+          if (err) {
+              console.error('Error updating case type:', err);
+              res.status(500).send('Error updating case type');
+              return;
+          }
+
+          res.send('Case added successfully!');
+      });
+  });
+});
+
+
+app.get('/api/case-types', (req, res) => {
+  const sql = 'SELECT * FROM cases';
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error('Error fetching case types:', err);
+      res.status(500).send('Error fetching case types');
+      return;
+    }
+    res.json(results);
+  });
+});
+
 // Start the server
 const PORT = 5000;
 app.listen(PORT, () => {
