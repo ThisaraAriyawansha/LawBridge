@@ -101,6 +101,38 @@ app.get('/api/cases', (req, res) => {
 });
 
 
+// API endpoint to send a message
+app.post('/api/send-message', (req, res) => {
+  const { encryptedMessage } = req.body;
+
+  // Process the message (e.g., save to the database)
+  const sql = 'INSERT INTO messages (message) VALUES (?)';
+  db.query(sql, [encryptedMessage], (err, result) => {
+    if (err) {
+      console.error('Error inserting message:', err);
+      return res.status(500).json({ message: 'Error sending message' });
+    }
+    res.json({ message: 'Message sent successfully!' });
+  });
+});
+
+// API endpoint to receive messages
+app.get('/api/receive-message', (req, res) => {
+  const sql = 'SELECT message FROM messages ORDER BY id DESC LIMIT 1';
+  db.query(sql, (err, result) => {
+    if (err) {
+      console.error('Error fetching message:', err);
+      return res.status(500).json({ message: 'Error receiving message' });
+    }
+    if (result.length === 0) {
+      return res.status(404).json({ message: 'No messages found' });
+    }
+    const message = result[0].message;
+    res.json({ encryptedMessage: message });
+  });
+});
+
+
 // Start the server
 const PORT = 5000;
 app.listen(PORT, () => {

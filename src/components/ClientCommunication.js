@@ -10,7 +10,7 @@ const ClientCommunication = () => {
             <div className="feature">
                 <h3>Secure Messaging</h3>
                 <p>Send and receive secure messages with your clients.</p>
-                <Link to="/secure-messaging">
+                <Link to="/sendMessage">
                     <button className="button">Start Messaging</button>
                 </Link>
             </div>
