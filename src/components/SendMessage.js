@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Navbar from './Navbar';
+import Footer from './Footer';
+import './SendMessage.css'; // Import your custom styles
 
 const SendMessage = () => {
   const [message, setMessage] = useState('');
@@ -54,9 +57,19 @@ const SendMessage = () => {
 
   return (
     <div>
-      <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Enter your message" />
-      <button onClick={sendMessage}>Send Message</button>
-      {sentMessage && <div>Sent Message: {sentMessage}</div>}
+      <Navbar/><br></br><br></br><br></br>
+      <div className="message-container">
+        <h2 className="message-title">Send a Secure Message</h2>
+        <textarea 
+          value={message} 
+          onChange={(e) => setMessage(e.target.value)} 
+          placeholder="Enter your message"
+          className="message-textarea"
+        />
+        <button onClick={sendMessage} className="message-button">Send Message</button>
+        {sentMessage && <div className="sent-message">Sent Message: {sentMessage}</div>}
+      </div><br></br><br></br>
+      <Footer/>
     </div>
   );
 };
