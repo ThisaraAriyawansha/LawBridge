@@ -77,15 +77,15 @@ const AddCase = () => {
                                 onChange={(e) => setProvince(e.target.value)}
                             >
                                 <option value="">Select Province</option>
-                                <option value="central_Province">Central Province</option>
-                                <option value="eastern_Province">Eastern Province</option>
-                                <option value="northern_Central_Province">North Central Province</option>
-                                <option value="southern_Province">Northern Province</option>
+                                <option value="Central_Province">Central Province</option>
+                                <option value="Eastern_Province">Eastern Province</option>
+                                <option value="Northern_Central_Province">North Central Province</option>
+                                <option value="Southern_Province">Northern Province</option>
                                 <option value="Northern_Province">North Western Province</option>
                                 <option value="Sabaragamuwa_Province">Sabaragamuwa Province</option>
-                                <option value="northern_Province">Southern Province</option>
+                                <option value="Northern_Province">Southern Province</option>
                                 <option value="Uva_Province">Uva Province</option>
-                                <option value="western_Province">Western Province</option>
+                                <option value="Western_Province">Western Province</option>
                             </select>
                         </div>
                         <div className="form-group">

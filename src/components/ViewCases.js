@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Navbar from './Navbar';
+import Footer from './Footer';
+import './ViewCases.css';
 
 const ViewCases = () => {
   const [caseTypes, setCaseTypes] = useState([]);
@@ -7,41 +10,51 @@ const ViewCases = () => {
   useEffect(() => {
     const fetchCaseTypes = async () => {
       try {
-        const response = await axios.get('/api/case-types');
-        setCaseTypes(response.data);
+        const response = await axios.get('http://localhost:5000/api/cases');
+        console.log('Fetched data:', response.data); // Add this line for debugging
+        // Convert date strings to readable format
+        const formattedData = response.data.map(item => ({
+          ...item,
+          date: new Date(item.date).toLocaleDateString(),
+        }));
+        setCaseTypes(formattedData);
       } catch (error) {
         console.error('Error fetching case types:', error);
       }
     };
-
+  
     fetchCaseTypes();
   }, []);
+  
 
   return (
-    <div className="view-cases">
-      <h2>Case Types</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>caseType</th>
-            <th>Description</th>
-            <th>Province</th>
-            <th>Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          {caseTypes.map((caseType) => (
-            <tr key={caseType.id}>
-              <td>{caseType.id}</td>
-              <td>{caseType.casetype}</td>
-              <td>{caseType.description}</td>
-              <td>{caseType.province}</td>
-              <td>{caseType.date}</td>
+    <div>
+      <br />
+      <Navbar /><br /><br /><br />
+      <div className="case-list-container">
+        <h1>Case List</h1>
+        <table className="case-table">
+          <thead>
+            <tr>
+              <th>Case Type</th>
+              <th>Description</th>
+              <th>Province</th>
+              <th>Date</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {caseTypes.map((caseItem) => (
+              <tr key={caseItem.id}>
+                <td>{caseItem.caseType}</td>
+                <td>{caseItem.description}</td>
+                <td>{caseItem.province}</td>
+                <td>{caseItem.date}</td> {/* Display formatted date */}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <Footer />
     </div>
   );
 };

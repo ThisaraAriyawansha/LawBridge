@@ -86,17 +86,20 @@ app.post('/addcase', (req, res) => {
 });
 
 
-app.get('/api/case-types', (req, res) => {
-  const sql = 'SELECT * FROM cases';
+// API endpoint to fetch cases
+app.get('/api/cases', (req, res) => {
+  const sql = 'SELECT * FROM cases'; // Updated query to fetch data from cases table
   db.query(sql, (err, results) => {
     if (err) {
-      console.error('Error fetching case types:', err);
-      res.status(500).send('Error fetching case types');
+      console.error('Error fetching cases:', err);
+      res.status(500).send('Error fetching cases');
       return;
     }
+    console.log('Fetched cases:', results); // Add this line for debugging
     res.json(results);
   });
 });
+
 
 // Start the server
 const PORT = 5000;
