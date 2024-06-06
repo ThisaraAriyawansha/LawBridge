@@ -57,6 +57,7 @@ const SendMessage = () => {
 
   return (
     <div>
+        <br></br>
       <Navbar/><br></br><br></br><br></br>
       <div className="message-container">
         <h2 className="message-title">Send a Secure Message</h2>
@@ -68,7 +69,7 @@ const SendMessage = () => {
         />
         <button onClick={sendMessage} className="message-button">Send Message</button>
         {sentMessage && <div className="sent-message">Sent Message: {sentMessage}</div>}
-      </div><br></br><br></br>
+      </div><br></br>
       <Footer/>
     </div>
   );

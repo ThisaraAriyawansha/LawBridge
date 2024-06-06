@@ -12,7 +12,9 @@ import AddCase from './components/AddCase';
 import ViewCases from './components/ViewCases';
 import SendMessage from './components/SendMessage';
 import ReceiveMessage from './components/ReceiveMessage';
-import ClientCommunication from './components/ClientCommunication'; // Add this import
+import ClientCommunication from './components/ClientCommunication'; 
+import AppointmentScheduling from './components/AppointmentScheduling';
+import ClientPortal from './components/ClientPortal';
 
 const App = () => {
     const handleLogin = (userData) => {
@@ -37,6 +39,8 @@ const App = () => {
                 <Route path="/client-communication" element={<ClientCommunication />} />
                 <Route path="/sendMessage" element={<SendMessage />} />
                 <Route path="/receiveMessage" element={<ReceiveMessage />} />
+                <Route path="/appointment-scheduling" element={<AppointmentScheduling />} />
+                <Route path="/client-portal" element={<ClientPortal/>} />
                 <Route path="/login" element={<Login handleLogin={handleLogin} />} />
                 <Route path="/register" element={<Register handleRegister={handleRegister} />} />
             </Routes>

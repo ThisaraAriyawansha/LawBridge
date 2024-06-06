@@ -18,7 +18,6 @@ const ClientCommunication = () => {
                 <h3>Appointment Scheduling</h3>
                 <p>Schedule appointments and set reminders for your clients.</p>
                 <Link to="/appointment-scheduling">
-                    {/* Apply the cta-button class to the button */}
                     <button className="button">Schedule Appointment</button>
                 </Link>
             </div>

@@ -58,7 +58,6 @@ app.post('/api/login', (req, res) => {
   });
 });
 
-
 app.post('/addcase', (req, res) => {
   const { caseType, description, province, date } = req.body;
 
@@ -85,7 +84,6 @@ app.post('/addcase', (req, res) => {
   });
 });
 
-
 // API endpoint to fetch cases
 app.get('/api/cases', (req, res) => {
   const sql = 'SELECT * FROM cases'; // Updated query to fetch data from cases table
@@ -99,7 +97,6 @@ app.get('/api/cases', (req, res) => {
     res.json(results);
   });
 });
-
 
 // API endpoint to send a message
 app.post('/api/send-message', (req, res) => {
@@ -132,6 +129,19 @@ app.get('/api/receive-message', (req, res) => {
   });
 });
 
+// Endpoint to schedule an appointment
+app.post('/api/schedule-appointment', (req, res) => {
+  const { clientName, appointmentDate } = req.body;
+  const sql = 'INSERT INTO appointments (client_name, appointment_date) VALUES (?, ?)';
+
+  db.query(sql, [clientName, appointmentDate], (error, results) => {
+      if (error) {
+          console.error('Error scheduling appointment:', error);
+          return res.status(500).json({ message: 'Error scheduling appointment' });
+      }
+      res.status(200).json({ message: 'Appointment scheduled successfully' });
+  });
+});
 
 // Start the server
 const PORT = 5000;
