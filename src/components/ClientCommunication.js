@@ -1,7 +1,8 @@
 // ClientCommunication.js
 import React from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link, Route,BrowserRouter as Router } from 'react-router-dom';
 import './ClientCommunication.css'; 
+
 
 const ClientCommunication = () => {
     return (
@@ -22,10 +23,10 @@ const ClientCommunication = () => {
                 </Link>
             </div>
             <div className="feature">
-                <h3>Client Portal</h3>
-                <p>Clients can log in to view updates and track their case status.</p>
-                <Link to="/client-portal">
-                    <button className="button">Visit Client Portal</button>
+                <h3>View Appointment</h3>
+                <p>Check the details of your upcoming and past appointments quickly and easily.</p>
+                <Link to="/calendarview">
+                    <button className="button">View Appointment</button>
                 </Link>
             </div>
         </div>

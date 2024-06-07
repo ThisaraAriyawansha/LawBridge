@@ -15,6 +15,7 @@ import ReceiveMessage from './components/ReceiveMessage';
 import ClientCommunication from './components/ClientCommunication'; 
 import AppointmentScheduling from './components/AppointmentScheduling';
 import ClientPortal from './components/ClientPortal';
+import CalendarView from './components/CalendarView';
 
 const App = () => {
     const handleLogin = (userData) => {
@@ -41,6 +42,7 @@ const App = () => {
                 <Route path="/receiveMessage" element={<ReceiveMessage />} />
                 <Route path="/appointment-scheduling" element={<AppointmentScheduling />} />
                 <Route path="/client-portal" element={<ClientPortal/>} />
+                <Route path="/calendarview" element={<CalendarView/>} />
                 <Route path="/login" element={<Login handleLogin={handleLogin} />} />
                 <Route path="/register" element={<Register handleRegister={handleRegister} />} />
             </Routes>

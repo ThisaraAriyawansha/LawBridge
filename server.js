@@ -143,6 +143,23 @@ app.post('/api/schedule-appointment', (req, res) => {
   });
 });
 
+app.get('/api/appointments', (req, res) => {
+  const { date } = req.query;
+
+  // Construct the SQL query to fetch appointments for the specified date
+  const sql = 'SELECT client_name, appointment_date FROM appointments WHERE DATE(appointment_date) = ?';
+
+  db.query(sql, [date], (err, results) => {
+    if (err) {
+      console.error('Error fetching appointments:', err);
+      return res.status(500).json({ message: 'Error fetching appointments' });
+    }
+    res.json(results);
+  });
+});
+
+
+
 // Start the server
 const PORT = 5000;
 app.listen(PORT, () => {
