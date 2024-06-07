@@ -1,7 +1,7 @@
 // ClientCommunication.js
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link for navigation
-import './ClientCommunication.css'; // Import your custom button styles
+import { Link } from 'react-router-dom'; 
+import './ClientCommunication.css'; 
 
 const ClientCommunication = () => {
     return (
@@ -25,7 +25,6 @@ const ClientCommunication = () => {
                 <h3>Client Portal</h3>
                 <p>Clients can log in to view updates and track their case status.</p>
                 <Link to="/client-portal">
-                    {/* Apply the cta-button class to the button */}
                     <button className="button">Visit Client Portal</button>
                 </Link>
             </div>
