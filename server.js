@@ -115,7 +115,7 @@ app.post('/api/send-message', (req, res) => {
 
 // API endpoint to receive messages
 app.get('/api/receive-message', (req, res) => {
-  const sql = 'SELECT message FROM messages ORDER BY id DESC LIMIT 1';
+  const sql = 'SELECT message FROM messages ORDER BY timestamp DESC LIMIT 1';
   db.query(sql, (err, result) => {
     if (err) {
       console.error('Error fetching message:', err);

@@ -17,9 +17,11 @@ const CaseManagement = () => {
                 <Link to="/view-cases" className="button" onClick={() => handleNavigation('/view-cases')}>View Cases</Link>
             </div>
             <div className="feature">
-                <h3>Task Management</h3>
-                <p>Assign tasks and track progress for each case.</p>
-                <Link to="/manage-tasks" className="button" onClick={() => handleNavigation('/manage-tasks')}>Manage Tasks</Link>
+                <h3>Secure Messaging</h3>
+                <p>Send and receive secure messages with your clients.</p>
+                <Link to="/receiveMessage">
+                    <button className="button">Start Messaging</button>
+                </Link>
             </div>
             <div className="feature">
                 <h3>Reports</h3>

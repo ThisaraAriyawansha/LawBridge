@@ -4,18 +4,24 @@ import axios from 'axios';
 const ReceiveMessage = () => {
   const [receivedMessage, setReceivedMessage] = useState('');
   const [key, setKey] = useState(null);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     const generateKey = async () => {
-      const cryptoKey = await window.crypto.subtle.generateKey(
-        {
-          name: 'AES-GCM',
-          length: 256,
-        },
-        true,
-        ['encrypt', 'decrypt']
-      );
-      setKey(cryptoKey);
+      try {
+        const cryptoKey = await window.crypto.subtle.generateKey(
+          {
+            name: 'AES-GCM',
+            length: 256,
+          },
+          true,
+          ['encrypt', 'decrypt']
+        );
+        console.log('Decryption Key Generated:', cryptoKey);
+        setKey(cryptoKey);
+      } catch (error) {
+        console.error('Error generating key:', error);
+      }
     };
 
     generateKey();
@@ -30,6 +36,8 @@ const ReceiveMessage = () => {
 
       try {
         const response = await axios.get('http://localhost:5000/api/receive-message');
+        console.log('Received encrypted message:', response.data);
+
         const encryptedMessage = response.data.encryptedMessage.split(',').map(Number);
         const iv = new Uint8Array(12); // Replace with the actual IV used during encryption
 
@@ -43,9 +51,11 @@ const ReceiveMessage = () => {
         );
 
         const decryptedMessage = new TextDecoder().decode(decryptedData);
+        console.log('Decrypted message:', decryptedMessage);
         setReceivedMessage(decryptedMessage);
       } catch (error) {
         console.error('Error fetching message:', error);
+        setError('Error fetching message. Please try again later.');
       }
     };
 
@@ -54,6 +64,7 @@ const ReceiveMessage = () => {
 
   return (
     <div>
+      {error && <p>{error}</p>}
       {receivedMessage ? (
         <div>
           <h3>Received Message</h3>

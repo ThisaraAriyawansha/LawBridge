@@ -28,17 +28,18 @@ const CalendarView = () => {
 
     const tileClassName = ({ date, view }) => {
         if (view === 'month') {
-            const dateString = date.toISOString().split('T')[0];
+            const dateString = date.toISOString().split('T')[0]; 
             const appointmentDates = appointments.map(appointment => {
-                const appointmentDate = new Date(appointment.appointment_date);
-                return appointmentDate.toISOString().split('T')[0];
+                const appointmentDate = new Date(appointment.appointment_date); 
+                return appointmentDate.toISOString().split('T')[0]; // Get the date string of the appointment date
             });
             if (appointmentDates.includes(dateString)) {
-                return 'booked';
+                return 'booked'; 
             }
         }
         return '';
     };
+    
 
     return (
         <div>

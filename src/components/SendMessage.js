@@ -11,15 +11,20 @@ const SendMessage = () => {
 
   useEffect(() => {
     const generateKey = async () => {
-      const cryptoKey = await window.crypto.subtle.generateKey(
-        {
-          name: 'AES-GCM',
-          length: 256,
-        },
-        true,
-        ['encrypt', 'decrypt']
-      );
-      setKey(cryptoKey);
+      try {
+        const cryptoKey = await window.crypto.subtle.generateKey(
+          {
+            name: 'AES-GCM',
+            length: 256,
+          },
+          true,
+          ['encrypt', 'decrypt']
+        );
+        console.log('Encryption Key Generated:', cryptoKey);
+        setKey(cryptoKey);
+      } catch (error) {
+        console.error('Error generating key:', error);
+      }
     };
 
     generateKey();
@@ -57,8 +62,9 @@ const SendMessage = () => {
 
   return (
     <div>
-        <br></br>
-      <Navbar/><br></br><br></br><br></br>
+      <br />
+      <Navbar />
+      <br /><br /><br />
       <div className="message-container">
         <h2 className="message-title">Send a Secure Message</h2>
         <textarea 
@@ -69,8 +75,9 @@ const SendMessage = () => {
         />
         <button onClick={sendMessage} className="message-button">Send Message</button>
         {sentMessage && <div className="sent-message">Sent Message: {sentMessage}</div>}
-      </div><br></br>
-      <Footer/>
+      </div>
+      <br />
+      <Footer />
     </div>
   );
 };
