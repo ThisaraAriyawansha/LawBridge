@@ -49,7 +49,7 @@ const PieChart = () => {
     <div className="pie-chart-page">
       <Navbar />
       <div className="chart-container">
-        <h2>Summery Of the Cases..</h2>
+        <h2>Summary Of the Cases..</h2>
         {chartData.labels ? <div className="chart-wrapper"><Pie data={chartData} /></div> : <p>Loading...</p>}
       </div>
       <Footer />
