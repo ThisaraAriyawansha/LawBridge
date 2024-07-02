@@ -1,0 +1,55 @@
+.register-form {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #03062e, #015560);
+    color: #ffffff;
+    animation: fadeIn 1s ease-in-out;
+    z-index: 2;
+}
+
+.register-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.register-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-form input[type="text"],
+.register-form input[type="password"],
+.register-form input[type="tel"],
+.register-form button {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    box-sizing: border-box; /* Ensure padding doesn't affect the size */
+}
+
+.register-form input[type="text"],
+.register-form input[type="password"],
+.register-form input[type="tel"] {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.register-form button {
+    background-color: #ffffff;
+    color: #1a237e;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.register-form button:hover {
+    background-color: #e0e0e0;
+    color: #000000;
+}

@@ -1,0 +1,101 @@
+/* src/components/AppointmentScheduling.css */
+.appointment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
+    min-height: 500px;
+    font-family: 'Arial', sans-serif;
+}
+
+.appointment-form {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.appointment-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    animation: fadeInDown 0.5s ease-in-out;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.appointment-form input {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+.appointment-form input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.animated-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.animated-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.confirmation-message {
+    margin-top: 20px;
+    color: #28a745;
+    font-size: 16px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
