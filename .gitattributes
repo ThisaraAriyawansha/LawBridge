@@ -1,0 +1,2 @@
+D:/NIBM/Project/React/Legal[[:space:]]Case[[:space:]]Management[[:space:]]System/LawBridge/node_modules filter=lfs diff=lfs merge=lfs -text
+node_modules/** filter=lfs diff=lfs merge=lfs -text
