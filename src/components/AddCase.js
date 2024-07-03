@@ -41,7 +41,7 @@ const AddCase = () => {
 
     return (
         <div><br></br>
-            <Navbar />
+            <Navbar /><br></br><br></br><br></br>
             <div className="add-case-background">
                 <div className="add-case-container">
                     <h2 className="add-case-title">Add New Case</h2>
